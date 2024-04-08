@@ -57,7 +57,7 @@ class DingDingPlugin(NotificationPlugin):
         #print(event.data.__str__)
         the_tags = defaultdict(lambda: '[NA]')
         the_tags.update({k:v for k, v in event.tags})
-        print(the_tags.data.__dict__)
+        print(the_tags.__dict__)
         
         data = {
             "msgtype": "markdown",

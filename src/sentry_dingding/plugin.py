@@ -53,7 +53,7 @@ class DingDingPlugin(NotificationPlugin):
         access_token = self.get_option('access_token', group.project)
         send_url = DingTalk_API.format(token=access_token)
         title = u"New alert from {}".format(event.project.slug)
-        print(event._dict_)
+        print(event.__dict__)
     
         data = {
             "msgtype": "markdown",

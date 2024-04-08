@@ -4,7 +4,7 @@ import json
 
 import requests
 from sentry.plugins.bases.notify import NotificationPlugin
-
+from collections import defaultdict
 import sentry_dingding
 from .forms import DingDingOptionsForm
 
@@ -53,7 +53,7 @@ class DingDingPlugin(NotificationPlugin):
         access_token = self.get_option('access_token', group.project)
         send_url = DingTalk_API.format(token=access_token)
         title = u"New alert from {}".format(event.project.slug)
-        print(event.data.__dict__)
+        #print(event.data.__dict__)
         #print(event.data.__str__)
         the_tags = defaultdict(lambda: '[NA]')
         the_tags.update({k:v for k, v in event.tags})

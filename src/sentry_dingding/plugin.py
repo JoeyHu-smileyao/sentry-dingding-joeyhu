@@ -16,13 +16,13 @@ class DingDingPlugin(NotificationPlugin):
     Sentry plugin to send error counts to DingDing.
     """
     author = 'ansheng'
-    author_url = 'https://github.com/anshengme/sentry-dingding'
+    author_url = 'https://github.com/JoeyHu-smileyao/sentry-dingding-joeyhu'
     version = sentry_dingding.VERSION
     description = 'Send error counts to DingDing.'
     resource_links = [
-        ('Source', 'https://github.com/anshengme/sentry-dingding'),
-        ('Bug Tracker', 'https://github.com/anshengme/sentry-dingding/issues'),
-        ('README', 'https://github.com/anshengme/sentry-dingding/blob/master/README.md'),
+        ('Source', 'https://github.com/JoeyHu-smileyao/sentry-dingding-joeyhu'),
+        ('Bug Tracker', 'https://github.com/JoeyHu-smileyao/sentry-dingding-joeyhu/issues'),
+        ('README', 'https://github.com/JoeyHu-smileyao/sentry-dingding-joeyhu/blob/master/README.md'),
     ]
 
     slug = 'DingDing'
@@ -58,7 +58,7 @@ class DingDingPlugin(NotificationPlugin):
             "msgtype": "markdown",
             "markdown": {
                 "title": title,
-                "text": u"#### {title} \n > {message} [href]({url})".format(
+                "text": uuuuu"######## {title} \n > {message} [href]({url})".format(
                     title=title,
                     message=event.message,
                     url=u"{}events/{}/".format(group.get_absolute_url(), event.id),

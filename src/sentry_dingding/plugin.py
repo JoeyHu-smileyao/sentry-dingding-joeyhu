@@ -59,7 +59,7 @@ class DingDingPlugin(NotificationPlugin):
             "markdown": {
                 "title": title,
                 "text": u"######## {title} \n > {message} [href]({url})".format(
-                    title=str(event),
+                    title=repr(event),
                     message=event.message,
                     url=u"{}events/{}/".format(group.get_absolute_url(), event.id),
                 )

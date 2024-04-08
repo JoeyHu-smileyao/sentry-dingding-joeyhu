@@ -53,15 +53,15 @@ class DingDingPlugin(NotificationPlugin):
         access_token = self.get_option('access_token', group.project)
         send_url = DingTalk_API.format(token=access_token)
         title = u"New alert from {}".format(event.project.slug)
-        eventjoey = json.dumps(event).encode("utf-8")
-        
+        print(event._dict_)
+    
         data = {
             "msgtype": "markdown",
             "markdown": {
                 "title": title,
                 "text": u"######## {title} \n > {message} [href]({url})".format(
                     title=title,
-                    message=eventjoey,
+                    message=event.message,
                     url=u"{}events/{}/".format(group.get_absolute_url(), event.id),
                 )
             }

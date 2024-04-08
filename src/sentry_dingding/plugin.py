@@ -57,15 +57,15 @@ class DingDingPlugin(NotificationPlugin):
         #print(event.data.__str__)
         the_tags = defaultdict(lambda: '[NA]')
         the_tags.update({k:v for k, v in event.tags})
-        print(the_tags)
         
         data = {
             "msgtype": "markdown",
             "markdown": {
                 "title": title,
-                "text": u"######## {title} \n > {message} [href]({url})".format(
+                "text": u"######## {tags[title]} \n > {message} [href]({url})".format(
                     title=title,
                     message=event.message,
+                    tags=the_tags,
                     url=u"{}events/{}/".format(group.get_absolute_url(), event.id),
                 )
             }

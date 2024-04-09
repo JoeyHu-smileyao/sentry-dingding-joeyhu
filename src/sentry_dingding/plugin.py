@@ -62,7 +62,7 @@ class DingDingPlugin(NotificationPlugin):
             "msgtype": "markdown",
             "markdown": {
                 "title": title,
-                "text": u"title: {tags[title]}  <br>serviceName: {tags[serviceName]}  <br>traceId: {tags[traceId]}  <br>url: [{url}]({url})  <br>errorCode: {tags[errorCode]}  <br>message: {message}".format(
+                "text": u"title: {tags[title]}  \n serviceName: {tags[serviceName]}  \n traceId: {tags[traceId]}  \n url: [{url}]({url})  \n errorCode: {tags[errorCode]}  \n message: {message}".format(
                     title=title,
                     message=event.message,
                     tags=the_tags,
